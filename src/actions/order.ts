@@ -10,15 +10,6 @@ export const createOrder = async (cartProducts: CartProduct[], userId: string) =
     data: {
       userId,
       status: "WAITING_FOR_PAYMENT",
-      orderProducts: {
-        createMany: {
-          data: cartProducts.map((product) => ({
-            discountPercentage: product.discountPercentage,
-            productId: product.id,
-            quantity: product.quantity,
-          })),
-        },
-      },
     },
   });
 
