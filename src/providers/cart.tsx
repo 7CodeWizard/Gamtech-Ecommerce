@@ -5,6 +5,9 @@ import { ReactNode, createContext, useEffect, useMemo, useState } from "react";
 import toast from "react-hot-toast";
 
 export interface CartProduct extends ProductWithTotalPrice {
+  name: string;
+  description: string;
+  imageUrls: string[];
   quantity: number;
 }
 
@@ -32,10 +35,10 @@ export const CartContext = createContext<ICartContext>({
   subtotal: 0,
   totalDiscount: 0,
   numTotalItems: 0,
-  AddProductsToCart: () => {},
-  decreaseProductQuantity: () => {},
-  increaseProductQuantity: () => {},
-  removeProductFromCart: () => {},
+  AddProductsToCart: () => { },
+  decreaseProductQuantity: () => { },
+  increaseProductQuantity: () => { },
+  removeProductFromCart: () => { },
 });
 
 const CartProvider = ({ children }: { children: ReactNode }) => {
