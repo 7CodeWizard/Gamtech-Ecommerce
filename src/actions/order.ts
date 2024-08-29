@@ -13,7 +13,6 @@ export const createOrder = async (cartProducts: CartProduct[], userId: string) =
       orderProducts: {
         createMany: {
           data: cartProducts.map((product) => ({
-            basePrice: product.basePrice,
             discountPercentage: product.discountPercentage,
             productId: product.id,
             quantity: product.quantity,
