@@ -19,15 +19,7 @@ export const createCheckout = async (products: CartProduct[], orderId: string) =
     },
     line_items: products.map((product) => {
       return {
-        price_data: {
-          currency: "brl",
-          product_data: {
-            // name: product.name,
-            description: product.description,
-            images: product.imageUrls,
-          },
-          unit_amount: product.totalPrice * 100,
-        },
+        unit_amount: product.totalPrice * 100,
         quantity: product.quantity,
       };
     }),
