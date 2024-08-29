@@ -22,7 +22,7 @@ export const createCheckout = async (products: CartProduct[], orderId: string) =
         price_data: {
           currency: "brl",
           product_data: {
-            name: product.name,
+            // name: product.name,
             description: product.description,
             images: product.imageUrls,
           },
